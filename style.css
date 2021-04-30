@@ -48,11 +48,14 @@ body {
     padding: 3px;
     color: #000;
     font-size: 2rem;
+    height: 2rem;
     cursor: pointer;
     display: none;
     position: absolute;
     top: 1rem;
     right: 1rem;
+    height: 3rem;
+    width: 2rem;
 }
 
 .header #bt_menu {
@@ -71,7 +74,6 @@ body {
     width: 80%;
     display: flex;
     justify-content: flex-end;
-    /* align-items: center; */
     position: relative;
 }
 
@@ -129,21 +131,24 @@ body {
         padding-top: 0;
         margin-left: 0;
     }
+}
+
+@media(max-width: 768px) {
     .header label[for="bt_menu"] {
         display: inherit;
     }
     .header nav ul {
-        transform: translateX(-180%);
+        display: none;
+    }
+    #bt_menu:checked {
+        top: 2rem;
     }
     #bt_menu:checked ~ ul {
-        display: block;
-        transition: all 0.8s ease 0.2s;
-        transform: translateX(0);
         width: 100%;
         display: flex;
         position: absolute;
         top: 5rem;
         left: 0;
-        margin-left: 0%;
+        opacity: 1;
     }
 }
